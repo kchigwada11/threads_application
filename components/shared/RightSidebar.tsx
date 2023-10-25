@@ -4,6 +4,7 @@ import UserCard from "../cards/UserCard";
 
 import { fetchCommunities } from "@/lib/actions/community.actions";
 import { fetchUsers } from "@/lib/actions/user.actions";
+import ViewCommunity from "../cards/ViewCommunity";
 
 async function RightSidebar() {
   const user = await currentUser();
@@ -27,7 +28,7 @@ async function RightSidebar() {
           {suggestedCOmmunities.communities.length > 0 ? (
             <>
               {suggestedCOmmunities.communities.map((community) => (
-                <UserCard
+                <ViewCommunity
                   key={community.id}
                   id={community.id}
                   name={community.name}
